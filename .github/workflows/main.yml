@@ -23,7 +23,7 @@ jobs:
 
       - name: Build and deploy
         run: |
-          jf rt u simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/
-          
+          jf rt u simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/ --build-name env.JOB_NAME --build-number env.BUILD_NUMBER
+          jf 'rt build-publish env.JOB_NAME env.BUILD_NUMBER
       
           
