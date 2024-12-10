@@ -26,11 +26,10 @@ jobs:
 
       - name: Build and deploy
         run: |
-          echo "JOB_NAME : $env:GITHUB_JOB"
+          echo "JOB_NAME : $env.JOB_NAME"
           echo "JOB_NUMBER : $env:GITHUB_RUN_NUMBER"
           
-#          jf rt u simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/
-          
-#          jf rt bpr ${JOB_NAME} ${JOB_NUMBER} alaxconnect-generic-release-local --status=RELEASE --comment=Release_App_robot --source-repo=alaxconnect-generic-test-local --copy=true
-      
+          jf rt u simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/v1/
+          jf rt cp simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/v1/ alaxconnect-generic-release-local/vacuum_robot/v1/
+          jf rt sp alaxconnect-generic-release-local/vacuum_robot/v1/simulated_vacuum_robot.py v1=version
           
