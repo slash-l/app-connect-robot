@@ -30,6 +30,6 @@ jobs:
           echo "JOB_NUMBER : $env:GITHUB_RUN_NUMBER"
           
           jf rt u simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/v1/
-          jf rt cp alaxconnect-generic-test-local/vacuum_robot/v1/simulated_vacuum_robot.py alaxconnect-generic-release-local/vacuum_robot/v1/
+          jf rt cp alaxconnect-generic-test-local/vacuum_robot/v1/simulated_vacuum_robot.py alaxconnect-generic-release-local/
           jf rt sp alaxconnect-generic-release-local/vacuum_robot/v1/simulated_vacuum_robot.py v1=version
           
