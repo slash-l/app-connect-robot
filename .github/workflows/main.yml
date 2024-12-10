@@ -16,6 +16,9 @@ jobs:
           # JFrog Platform access token
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
 
+          JOB_NAME: ${{ github.job }}
+          JOB_NUMBER: ${{ github.run_number }}
+
       - name: Test JFrog CLI
         run: |
           # Ping the server
@@ -25,6 +28,6 @@ jobs:
         run: |
           jf rt u simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/
           
-          jf rt bpr alaxconnect-generic-release-local --status=RELEASE --comment=Release_App_robot --source-repo=alaxconnect-generic-test-local --copy=true
+          jf rt bpr ${JOB_NAME} ${JOB_NUMBER} alaxconnect-generic-release-local --status=RELEASE --comment=Release_App_robot --source-repo=alaxconnect-generic-test-local --copy=true
       
           
