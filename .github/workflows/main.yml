@@ -23,7 +23,8 @@ jobs:
 
       - name: Build and deploy
         run: |
-          jf rt u simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/ --build-name env.JOB_NAME --build-number env.BUILD_NUMBER
-          jf 'rt build-publish env.JOB_NAME env.BUILD_NUMBER
+          jf rt u simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/
+          
+          jf rt bpr alaxconnect-generic-release-local --status=RELEASE --comment=Release_App_robot --source-repo=alaxconnect-generic-test-local --copy=true
       
           
