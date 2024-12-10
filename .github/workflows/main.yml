@@ -26,6 +26,9 @@ jobs:
 
       - name: Build and deploy
         run: |
+          echo "JOB_NAME : ${{ vars.JOB_NAME }}"
+          echo "JOB_NAME : ${{ vars.RUNNER }}"
+          
           jf rt u simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/
           
           jf rt bpr ${JOB_NAME} ${JOB_NUMBER} alaxconnect-generic-release-local --status=RELEASE --comment=Release_App_robot --source-repo=alaxconnect-generic-test-local --copy=true
