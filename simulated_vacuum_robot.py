@@ -54,8 +54,8 @@ class SimulatedRobot:
     def report_property(self):
 
         # 获取设备运行时长
-       self.get_uptime_from_proc()
-       print("Running time: " + self.runtime)
+        self.get_uptime_from_proc()
+        print("Running time: " + self.runtime)
 
         # 上报 data 数据到 JFrog Connect
         payload = {
