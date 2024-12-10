@@ -26,8 +26,8 @@ jobs:
 
       - name: Build and deploy
         run: |
-          echo "JOB_NAME : ${{ GITHUB_JOB }}"
-          echo "JOB_NUMBER : ${{ GITHUB_RUN_NUMBER }}"
+          echo "JOB_NAME : $env:GITHUB_JOB"
+          echo "JOB_NUMBER : $env:GITHUB_RUN_NUMBER"
           
 #          jf rt u simulated_vacuum_robot.py alaxconnect-generic-test-local/vacuum_robot/
           
